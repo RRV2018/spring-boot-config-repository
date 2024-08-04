@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    include: rabbitmq
+
+rabbitmq:
+  service:
+    publish:
+      url: http://RABBITMQ-PUBLISHER/RABBITMQ-PUBLISHER/sendScheduleMessage
