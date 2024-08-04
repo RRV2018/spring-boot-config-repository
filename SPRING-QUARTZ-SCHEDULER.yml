@@ -6,3 +6,9 @@ rabbitmq:
   service:
     publish:
       url: http://RABBITMQ-PUBLISHER/RABBITMQ-PUBLISHER/sendScheduleMessage
+
+scheduler:
+  cron:
+    expression: 0 * * * * ?
+  fixedrate:
+    ms: 15000
