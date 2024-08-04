@@ -1,0 +1,31 @@
+microservices:
+  database:
+    service:
+      baseUrl: http://DATABASE-OPERATION-SERVICE/DATABASE-OPERATION-SERVICE
+      exchange: /allExchangeForCurrency?fromCurrency=%s
+      city: /allCitiesForCountry?country=%s
+
+rabbitmq:
+  publisher:
+    baseUrl: http://RABBITMQ-PUBLISHER/RABBITMQ-PUBLISHER
+    exchange: /sendExchangeRate
+    city: /sendCity
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      exchangeRateCircuitbreaker:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        sliding-window-type: count_based
+        permittedNumberOfCallsInHalfOpenState: 3
+        waitDurationInOpenState: 50s
+        automatic-transition-from-open-to-half-open-enabled: true
+        minimumNumberOfCalls: 5
+        failureRateThreshold: 50
+        register-health-indicator: true
+  retry:
+    instances:
+      getAllCities:
+        maxAttempts: 3
+        waitDuration: 5s

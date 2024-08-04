@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521/XE
+    username: SYS as SYSDBA
+    password: raj
+    driver-class-name: oracle.jdbc.OracleDriver
+    jpa:
+      hibernate:
+        ddl-auto: update
+      database-platform: org.hibernate.dialect.Oracle10gDialect
+      show-sql: true
+

@@ -1,0 +1,26 @@
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: DATABASE-OPERATION-SERVICE
+          uri: lb://DATABASE-OPERATION-SERVICE
+          predicates:
+            - Path=/DATABASE-OPERATION-SERVICE/**
+        - id: JWT-SECURITY-SERVICE
+          uri: lb://JWT-SECURITY-SERVICE
+          predicates:
+            - Path=/JWT-SECURITY-SERVICE/**
+        - id: GUI-CONNECTION-SERVICE
+          uri: lb://GUI-CONNECTION-SERVICE
+          predicates:
+            - Path=/GUI-CONNECTION-SERVICE/**
+        - id: RABBITMQ-CONSUMER
+          uri: lb://RABBITMQ-CONSUMER
+          predicates:
+            - Path=/RABBITMQ-CONSUMER/**
+        - id: RABBITMQ-PUBLISHER
+          uri: lb://RABBITMQ-PUBLISHER
+          predicates:
+            - Path=/RABBITMQ-PUBLISHER/**      

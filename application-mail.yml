@@ -1,0 +1,12 @@
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: rvarade83@gmail.com
+    password: azgv uwlp vcqt wxfv
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
