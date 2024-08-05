@@ -7,7 +7,7 @@ spring:
         - id: DATABASE-OPERATION-SERVICE
           uri: lb://DATABASE-OPERATION-SERVICE
           predicates:
-            - Path=/DATABASE-OPERATION-SERVICE/**
+            - Path=/data-api/**
         - id: JWT-SECURITY-SERVICE
           uri: lb://JWT-SECURITY-SERVICE
           predicates:
