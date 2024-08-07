@@ -2,8 +2,8 @@ microservices:
   database:
     service:
       baseUrl: http://DATABASE-OPERATION-SERVICE/data-api
-      exchange: /cities/allExchangeForCurrency?fromCurrency=%s
-      city: /exchange/allCitiesForCountry?country=%s
+      exchange: /exchange/allExchangeForCurrency?fromCurrency=%s
+      city: /cities/allCitiesForCountry?country=%s
 
 rabbitmq:
   publisher:
