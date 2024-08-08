@@ -15,7 +15,7 @@ spring:
         - id: GUI-CONNECTION-SERVICE
           uri: lb://GUI-CONNECTION-SERVICE
           predicates:
-            - Path=//gui-api/**
+            - Path=/gui-api/**
         - id: RABBITMQ-CONSUMER
           uri: lb://RABBITMQ-CONSUMER
           predicates:
